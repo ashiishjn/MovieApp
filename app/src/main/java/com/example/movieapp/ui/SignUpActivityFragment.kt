@@ -1,4 +1,4 @@
-package com.example.movieapp
+package com.example.movieapp.ui
 
 import android.os.Bundle
 import android.text.Editable
@@ -13,6 +13,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.movieapp.R
 
 
 class SignUpActivityFragment : Fragment() {
@@ -91,24 +92,4 @@ class SignUpActivityFragment : Fragment() {
             Toast.makeText(view.context, "SignUp Successful", Toast.LENGTH_SHORT).show()
         }
     }
-
-//    private lateinit var listener : ShowSignIn
-//
-//    override fun onAttach(context: Context) {
-//        super.onAttach(context)
-//        if (context is com.example.movieapp.
-//            SignUpActivityFragment.ShowSignIn) {
-//            listener =
-//                context as ShowSignIn // = (YourActivity) context
-//        } else {
-//            throw ClassCastException(
-//                context.toString()
-//                        + " must implement SignUpActivityFragment.onSignInButtonSelected"
-//            )
-//        }
-//    }
-//
-//    interface ShowSignIn {
-//        fun onSignInButtonSelected()
-//    }
 }

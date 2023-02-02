@@ -1,8 +1,9 @@
-package com.example.movieapp
+package com.example.movieapp.ui
 
 import android.widget.Button
 import androidx.core.content.ContextCompat.getColor
-
+import com.example.movieapp.R
+import com.example.movieapp.UserLoginActivity
 
 class UserLoginView {
 
@@ -32,10 +33,10 @@ class UserLoginView {
         val SignUp : Button = view.findViewById(R.id.ToSignUp)
 
         toSignIn.setBackgroundResource(R.drawable.login_signup_button_bold)
-        toSignIn.setTextColor(getColor(view,R.color.theme_background))
+        toSignIn.setTextColor(getColor(view, R.color.theme_background))
 
         SignUp.setBackgroundResource(R.drawable.login_signup_button_transparent)
-        SignUp.setTextColor(getColor(view,R.color.extra_light_grey))
+        SignUp.setTextColor(getColor(view, R.color.extra_light_grey))
     }
 
     fun updateToSignUp(view: UserLoginActivity) {
@@ -43,9 +44,9 @@ class UserLoginView {
         val toSignUp : Button = view.findViewById(R.id.ToSignUp)
 
         SignIn.setBackgroundResource(R.drawable.login_signup_button_transparent)
-        SignIn.setTextColor(getColor(view,R.color.extra_light_grey))
+        SignIn.setTextColor(getColor(view, R.color.extra_light_grey))
 
         toSignUp.setBackgroundResource(R.drawable.login_signup_button_bold)
-        toSignUp.setTextColor(getColor(view,R.color.theme_background))
+        toSignUp.setTextColor(getColor(view, R.color.theme_background))
     }
 }

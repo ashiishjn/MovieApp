@@ -1,6 +1,5 @@
-package com.example.movieapp
+package com.example.movieapp.ui
 
-import android.content.Context
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -12,6 +11,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.example.movieapp.R
 
 class SignInActivityFragment : Fragment() {
     override fun onCreateView(
@@ -48,25 +48,5 @@ class SignInActivityFragment : Fragment() {
 
         logIn.setOnClickListener { Toast.makeText(view.context, "SignIn Successful", Toast.LENGTH_SHORT).show(); }
     }
-
-//    private lateinit var listener : ShowSignUp
-//
-//    override fun onAttach(context: Context) {
-//        super.onAttach(context)
-//        if (context is com.example.movieapp.
-//            SignInActivityFragment.ShowSignUp) {
-//            listener =
-//                context as ShowSignUp // = (YourActivity) context
-//        } else {
-//            throw ClassCastException(
-//                context.toString()
-//                        + " must implement SignInActivityFragment.onSignUpButtonSelected"
-//            )
-//        }
-//    }
-//
-//    interface ShowSignUp {
-//        fun onSignUpButtonSelected()
-//    }
 
 }

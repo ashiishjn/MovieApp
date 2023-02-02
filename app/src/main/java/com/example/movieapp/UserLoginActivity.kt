@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.fragment.app.FragmentTransaction
+import com.example.movieapp.ui.SignInActivityFragment
+import com.example.movieapp.ui.SignUpActivityFragment
+import com.example.movieapp.ui.UserLoginView
 
 class UserLoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
