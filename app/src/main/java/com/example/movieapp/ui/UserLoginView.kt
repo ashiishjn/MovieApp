@@ -8,45 +8,50 @@ import com.example.movieapp.UserLoginActivity
 class UserLoginView {
 
     var flag : Boolean = true
-    fun onFocusListener(view: UserLoginActivity) {
+    fun onFocusListener(userLoginActivity: UserLoginActivity) {
 
-        val toSignIn : Button = view.findViewById(R.id.ToSignIn)
-        val toSignUp : Button = view.findViewById(R.id.ToSignUp)
+        val toSignIn : Button = userLoginActivity.findViewById(R.id.ToSignIn)
+        val toSignUp : Button = userLoginActivity.findViewById(R.id.ToSignUp)
+
+        userLoginActivity.SignIn()
+        updateToSignIn(userLoginActivity)
 
         toSignIn.setOnClickListener {
             if(!flag){
-                UserLoginActivity().SignIn()
+                userLoginActivity.SignIn()
+                updateToSignIn(userLoginActivity)
                 flag = true
             }
         }
 
         toSignUp.setOnClickListener {
             if(flag){
-                UserLoginActivity().SignUp()
+                userLoginActivity.SignUp()
+                updateToSignUp(userLoginActivity)
                 flag = false
             }
         }
     }
 
-    fun updateToSignIn(view: UserLoginActivity) {
-        val toSignIn : Button = view.findViewById(R.id.ToSignIn)
-        val SignUp : Button = view.findViewById(R.id.ToSignUp)
+    fun updateToSignIn(userLoginActivity: UserLoginActivity) {
+        val toSignIn : Button = userLoginActivity.findViewById(R.id.ToSignIn)
+        val SignUp : Button = userLoginActivity.findViewById(R.id.ToSignUp)
 
         toSignIn.setBackgroundResource(R.drawable.login_signup_button_bold)
-        toSignIn.setTextColor(getColor(view, R.color.theme_background))
+        toSignIn.setTextColor(getColor(userLoginActivity, R.color.theme_background))
 
         SignUp.setBackgroundResource(R.drawable.login_signup_button_transparent)
-        SignUp.setTextColor(getColor(view, R.color.extra_light_grey))
+        SignUp.setTextColor(getColor(userLoginActivity, R.color.extra_light_grey))
     }
 
-    fun updateToSignUp(view: UserLoginActivity) {
-        val SignIn : Button = view.findViewById(R.id.ToSignIn)
-        val toSignUp : Button = view.findViewById(R.id.ToSignUp)
+    fun updateToSignUp(userLoginActivity: UserLoginActivity) {
+        val SignIn : Button = userLoginActivity.findViewById(R.id.ToSignIn)
+        val toSignUp : Button = userLoginActivity.findViewById(R.id.ToSignUp)
 
         SignIn.setBackgroundResource(R.drawable.login_signup_button_transparent)
-        SignIn.setTextColor(getColor(view, R.color.extra_light_grey))
+        SignIn.setTextColor(getColor(userLoginActivity, R.color.extra_light_grey))
 
         toSignUp.setBackgroundResource(R.drawable.login_signup_button_bold)
-        toSignUp.setTextColor(getColor(view, R.color.theme_background))
+        toSignUp.setTextColor(getColor(userLoginActivity, R.color.theme_background))
     }
 }

@@ -17,29 +17,7 @@ class UserLoginActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         val userLoginView : UserLoginView = UserLoginView()
-//        userLoginView.onFocusListener(this)
-
-        SignIn()
-        userLoginView.updateToSignIn(this)
-        var flag = true
-        val toSignIn : Button = findViewById(R.id.ToSignIn)
-        val toSignUp : Button = findViewById(R.id.ToSignUp)
-
-        toSignIn.setOnClickListener {
-            if(!flag){
-                SignIn()
-                userLoginView.updateToSignIn(this)
-                flag = true
-            }
-        }
-
-        toSignUp.setOnClickListener {
-            if(flag){
-                SignUp()
-                userLoginView.updateToSignUp(this)
-                flag = false
-            }
-        }
+        userLoginView.onFocusListener(this)
     }
 
     fun SignIn(){
