@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:background="@color/theme_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/va_baseline_person_24"
+            android:background="@drawable/edittext_transparent_background"
+            android:hint="Name"
+            android:id="@+id/signUp_name"
+            android:inputType="text"
+            android:textColor="@color/extra_light_grey"
+            android:textColorHint="@color/light_grey"
+            android:textColorHighlight="@color/extra_light_grey" />
+
+        <EditText
+            android:id="@+id/signUp_emailId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/va_baseline_email_24"
+            android:background="@drawable/edittext_transparent_background"
+            android:hint="Email ID"
+            android:inputType="textEmailAddress"
+            android:padding="15dp"
+            android:textColor="@color/extra_light_grey"
+            android:textColorHighlight="@color/extra_light_grey"
+            android:textColorHint="@color/light_grey" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="15dp"
+            android:id="@+id/signUp_mobileNo"
+            android:drawablePadding="10dp"
+            android:drawableStart="@drawable/va_baseline_smartphone_24"
+            android:background="@drawable/edittext_transparent_background"
+            android:hint="Contact Number"
+            android:inputType="number"
+            android:textColor="@color/extra_light_grey"
+            android:textColorHint="@color/light_grey"
+            android:textColorHighlight="@color/extra_light_grey"/>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="15dp"
+                android:id="@+id/signUp_password1"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/va_baseline_lock_24"
+                android:background="@drawable/edittext_transparent_background"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColor="@color/extra_light_grey"
+                android:textColorHint="@color/light_grey"
+                android:textColorHighlight="@color/extra_light_grey"/>
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/signUp_showPassword1"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="-60dp"
+                android:padding="15dp"
+                style="?android:buttonBarButtonStyle" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:padding="15dp"
+                android:id="@+id/signUp_password2"
+                android:drawablePadding="10dp"
+                android:drawableStart="@drawable/va_baseline_lock_24"
+                android:background="@drawable/edittext_transparent_background"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:textColor="@color/extra_light_grey"
+                android:textColorHint="@color/light_grey"
+                android:textColorHighlight="@color/extra_light_grey"/>
+
+            <ImageButton
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/signUp_showPassword2"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="-60dp"
+                android:padding="15dp"
+                style="?android:buttonBarButtonStyle" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signUp_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/button_bold_background"
+        android:padding="15dp"
+        android:shadowColor="@android:color/transparent"
+        android:textSize="20sp"
+        android:textColor="@color/theme_background"
+        android:text="Sign Up" />
+
+</LinearLayout>
