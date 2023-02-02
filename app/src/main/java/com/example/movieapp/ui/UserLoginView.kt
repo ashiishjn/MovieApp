@@ -8,8 +8,6 @@ import com.example.movieapp.UserLoginActivity
 
 class UserLoginView {
 
-
-
     fun SignIn(userLoginActivity: UserLoginActivity){
         val signInActivityFragment : SignInActivityFragment = SignInActivityFragment()
         val fragmentTransaction: FragmentTransaction = userLoginActivity.supportFragmentManager.beginTransaction()
