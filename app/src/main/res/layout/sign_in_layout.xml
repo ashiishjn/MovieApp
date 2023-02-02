@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="20dp"
-        android:background="@color/theme_background" >
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingHorizontal="40dp"
+    android:paddingTop="60dp"
+    android:background="@color/theme_background" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -143,6 +144,6 @@
          android:textSize="18sp"
          android:textColor="@color/extra_light_grey"
          android:gravity="center_horizontal"
-         android:layout_marginTop="15dp"/>
+         android:layout_marginVertical="15dp"/>
 
 </LinearLayout>

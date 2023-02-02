@@ -21,15 +21,19 @@ class UserLoginActivity : AppCompatActivity(), SignUpActivityFragment.SignUpToSi
         userLoginView.SignIn(this)
     }
 
-    override fun onSignInButtonSelected() {
+    override fun onToSignInButtonSelected() {
         userLoginView.SignIn(this)
     }
 
-    override fun onSignUpButtonSelected() {
+    override fun onToSignUpButtonSelected() {
         userLoginView.SignUp(this)
     }
 
-    override fun adminLoginInSelected() {
+    override fun onToSignInAsAdminSelected() {
         userLoginView.adminLogin(this)
+    }
+
+    override fun onSignInButtonSelected() {
+        userLoginView.HomeScreenActivity(this)
     }
 }
