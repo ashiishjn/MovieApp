@@ -1,6 +1,6 @@
 package com.example.movieapp.ui
 
-import android.content.Intent
+import android.content.Context
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
@@ -13,7 +13,6 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.movieapp.AdminLoginActivity
 import com.example.movieapp.R
 
 class SignInActivityFragment : Fragment() {
@@ -37,6 +36,8 @@ class SignInActivityFragment : Fragment() {
 
         val signInasAdmin : TextView = view.findViewById(R.id.signInasAdmin)
 
+        val signInToSignUp : Button = view.findViewById(R.id.SignInToSignUp)
+
         showPassword.setImageResource(R.drawable.va_baseline_visibility_off_24)
 
         showPassword.setOnClickListener(View.OnClickListener {
@@ -54,8 +55,33 @@ class SignInActivityFragment : Fragment() {
         logIn.setOnClickListener { Toast.makeText(view.context, "SignIn Successful", Toast.LENGTH_SHORT).show(); }
 
         signInasAdmin.setOnClickListener {
-            startActivity(Intent(view.context, AdminLoginActivity::class.java))
+            listener.adminLoginInSelected()
         }
+
+        signInToSignUp.setOnClickListener {
+            listener.onSignUpButtonSelected()
+        }
+    }
+
+    private lateinit var listener : SignInActivityFragment.SignInToSignUp
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is com.example.movieapp.ui.
+            SignInActivityFragment.SignInToSignUp) {
+            listener =
+                context as SignInToSignUp // = (YourActivity) context
+        } else {
+            throw ClassCastException(
+                context.toString()
+                        + " must implement SignInToSignUp.onSignUpButtonSelected"
+            )
+        }
+    }
+
+    interface SignInToSignUp {
+        fun onSignUpButtonSelected()
+        fun adminLoginInSelected()
     }
 
 }

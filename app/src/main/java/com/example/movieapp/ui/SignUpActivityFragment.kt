@@ -1,5 +1,6 @@
 package com.example.movieapp.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -59,6 +60,8 @@ class SignUpActivityFragment : Fragment() {
             }
         })
 
+        val signUpToSignIn : Button = view.findViewById(R.id.SignUpToSignIn)
+
         var flag = true
         var confirmFlag = true
 
@@ -91,5 +94,29 @@ class SignUpActivityFragment : Fragment() {
         signUp.setOnClickListener {
             Toast.makeText(view.context, "SignUp Successful", Toast.LENGTH_SHORT).show()
         }
+
+        signUpToSignIn.setOnClickListener {
+            listener.onSignInButtonSelected()
+        }
+    }
+
+    private lateinit var listener : SignUpToSignIn
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is com.example.movieapp.ui.
+            SignUpActivityFragment.SignUpToSignIn) {
+            listener =
+                context as SignUpToSignIn // = (YourActivity) context
+        } else {
+            throw ClassCastException(
+                context.toString()
+                        + " must implement SignUpToSignIn.onSignInButtonSelected"
+            )
+        }
+    }
+
+    interface SignUpToSignIn {
+        fun onSignInButtonSelected()
     }
 }
