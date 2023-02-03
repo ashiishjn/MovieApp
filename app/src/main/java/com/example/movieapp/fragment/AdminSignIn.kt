@@ -12,9 +12,14 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import com.example.movieapp.R
+import com.example.movieapp.databinding.FragmentAdminSignInBinding
+import com.example.movieapp.databinding.FragmentSignInBinding
 import com.example.movieapp.ui.AdminSignInView
 
 class AdminSignIn : Fragment() {
+
+    private  var _binding : FragmentAdminSignInBinding?=null
+    private  val binding get() = _binding!!
 
     val adminSignInView : AdminSignInView = AdminSignInView()
 
@@ -22,12 +27,18 @@ class AdminSignIn : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding= FragmentAdminSignInBinding.inflate(inflater,container,false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_admin_sign_in, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         adminSignInView.workWithListener(view)
 
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding=null
     }
 }
