@@ -1,21 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<androidx.cardview.widget.CardView
     android:layout_margin="10dp"
+    app:cardCornerRadius="10dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="230dp"
     android:orientation="vertical"
     android:layout_gravity="center_horizontal"
-    android:background="@color/extra_light_grey">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:id="@+id/home_screen_movie_poster_image"
+        android:src="@drawable/pathaan_poster_portrait"
         android:layout_width="150dp"
         android:layout_height="200dp"/>
 
     <LinearLayout
+        android:background="@color/extra_light_grey"
         android:gravity="center_horizontal"
-        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_width="150dp"
         android:layout_height="30dp"
         android:orientation="horizontal">
 
@@ -30,9 +34,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="22sp"
-            android:textColor="@color/alternate_red"/>
+            android:textColor="@color/dark_grey"/>
 
     </LinearLayout>
 
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>
