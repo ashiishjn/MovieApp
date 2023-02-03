@@ -6,10 +6,15 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
 import retrofit2.Retrofit
 import javax.inject.Singleton
+import kotlin.text.Typography.dagger
 
 @Module
 @InstallIn(ActivityComponent::class)
 object AppModule {
-
-
+    @Provides
+    @Singleton
+    fun provideRetrofit(): Retrofit =
+        Retrofit.Builder()
+            .baseUrl("Yet to Implement")
+            .addConverterFactory()
 }
