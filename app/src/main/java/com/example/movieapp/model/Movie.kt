@@ -10,6 +10,7 @@ data class Movie(
     val description: String,
     val genre: String,
     val length: String,
+    val time: String,
     val poster: Int,
     val theatreList: MutableList<Theatre>,
 ) : Parcelable

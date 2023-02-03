@@ -2,3 +2,6 @@
 /shelf/
 /workspace.xml
 /vcs.xml
+/misc.xml
+/compiler.xml
+/gradle.xml
