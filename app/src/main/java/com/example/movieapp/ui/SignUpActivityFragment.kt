@@ -96,7 +96,7 @@ class SignUpActivityFragment : Fragment() {
         }
 
         signUpToSignIn.setOnClickListener {
-            listener.onSignInButtonSelected()
+            listener.onToSignInButtonSelected()
         }
     }
 
@@ -117,6 +117,6 @@ class SignUpActivityFragment : Fragment() {
     }
 
     interface SignUpToSignIn {
-        fun onSignInButtonSelected()
+        fun onToSignInButtonSelected()
     }
 }

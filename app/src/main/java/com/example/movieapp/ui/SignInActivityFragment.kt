@@ -52,14 +52,17 @@ class SignInActivityFragment : Fragment() {
             }
         })
 
-        logIn.setOnClickListener { Toast.makeText(view.context, "SignIn Successful", Toast.LENGTH_SHORT).show(); }
+        logIn.setOnClickListener {
+            Toast.makeText(view.context, "SignIn Successful", Toast.LENGTH_SHORT).show();
+            listener.onSignInButtonSelected()
+        }
 
         signInasAdmin.setOnClickListener {
-            listener.adminLoginInSelected()
+            listener.onToSignInAsAdminSelected()
         }
 
         signInToSignUp.setOnClickListener {
-            listener.onSignUpButtonSelected()
+            listener.onToSignUpButtonSelected()
         }
     }
 
@@ -80,8 +83,9 @@ class SignInActivityFragment : Fragment() {
     }
 
     interface SignInToSignUp {
-        fun onSignUpButtonSelected()
-        fun adminLoginInSelected()
+        fun onToSignUpButtonSelected()
+        fun onToSignInAsAdminSelected()
+        fun onSignInButtonSelected()
     }
 
 }
