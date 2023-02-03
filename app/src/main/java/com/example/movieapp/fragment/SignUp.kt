@@ -15,31 +15,45 @@ import android.widget.ImageButton
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.movieapp.R
+import com.example.movieapp.databinding.FragmentSignInBinding
+import com.example.movieapp.databinding.FragmentSignUpBinding
 import com.example.movieapp.ui.SignUpView
 
 class SignUp : Fragment() {
 
     val signUpView : SignUpView = SignUpView()
 
+    private  var _binding :FragmentSignUpBinding?=null
+    private  val binding get() = _binding!!
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        _binding= FragmentSignUpBinding.inflate(inflater, container, false)
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up, container, false)
+        binding.signUpButton.setOnClickListener {
+            Toast.makeText(context, "SignUp Successful", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(R.id.action_signUp_to_movieDescription)
+        }
+
+        binding.SignUpToSignIn.setOnClickListener {
+            findNavController().navigate(R.id.action_signUp_to_signIn)
+        }
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         signUpView.workWithListener(view)
 
-        view.findViewById<Button>(R.id.signUp_button).setOnClickListener {
-            Toast.makeText(view.context, "SignUp Successful", Toast.LENGTH_SHORT).show()
-            findNavController().navigate(R.id.action_signUp_to_movieDescription)
-        }
 
-        view.findViewById<Button>(R.id.SignUpToSignIn).setOnClickListener {
-            findNavController().navigate(R.id.action_signUp_to_signIn)
-        }
     }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding=null
+    }
+
 }

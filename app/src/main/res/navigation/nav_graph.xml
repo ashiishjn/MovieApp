@@ -59,5 +59,10 @@
         android:id="@+id/movieDescription"
         android:name="com.example.movieapp.fragment.MovieDescription"
         android:label="fragment_movie_description"
-        tools:layout="@layout/fragment_movie_description" />
+        tools:layout="@layout/fragment_movie_description" >
+        <action
+            android:id="@+id/action_movieDescription_to_nav_graph"
+            app:popUpTo="@id/signUp"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
