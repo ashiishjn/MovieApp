@@ -14,8 +14,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.movieapp.R
+import com.example.movieapp.ui.SignInView
 
 class SignInActivityFragment : Fragment() {
+
+    val signInView : SignInView = SignInView()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -25,43 +28,19 @@ class SignInActivityFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        var flag : Boolean = true
 
-        val username : EditText = view.findViewById(R.id.login_username)
-        val password : EditText = view.findViewById(R.id.login_password)
+        signInView.workWithListener(view)
 
-        val showPassword : ImageButton = view.findViewById(R.id.login_showpassword)
-
-        val logIn : Button = view.findViewById(R.id.loginButton)
-
-        val signInasAdmin : TextView = view.findViewById(R.id.signInasAdmin)
-
-        val signInToSignUp : Button = view.findViewById(R.id.SignInToSignUp)
-
-        showPassword.setImageResource(R.drawable.va_baseline_visibility_off_24)
-
-        showPassword.setOnClickListener(View.OnClickListener {
-            if (flag) {
-                showPassword.setImageResource(R.drawable.va_baseline_visibility_24)
-                password.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
-                flag = false
-            } else {
-                showPassword.setImageResource(R.drawable.va_baseline_visibility_off_24)
-                password.setTransformationMethod(PasswordTransformationMethod.getInstance())
-                flag = true
-            }
-        })
-
-        logIn.setOnClickListener {
+        view.findViewById<Button>(R.id.loginButton).setOnClickListener {
             Toast.makeText(view.context, "SignIn Successful", Toast.LENGTH_SHORT).show();
             listener.onSignInButtonSelected()
         }
 
-        signInasAdmin.setOnClickListener {
+        view.findViewById<TextView>(R.id.signInasAdmin).setOnClickListener {
             listener.onToSignInAsAdminSelected()
         }
 
-        signInToSignUp.setOnClickListener {
+        view.findViewById<Button>(R.id.SignInToSignUp).setOnClickListener {
             listener.onToSignUpButtonSelected()
         }
     }

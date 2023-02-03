@@ -7,7 +7,7 @@ import com.example.movieapp.R
 import com.example.movieapp.MainActivity
 import com.example.movieapp.fragment.*
 
-class UserLoginView {
+class MainActivityView {
 
     fun ToSignIn(mainActivity: MainActivity){
         val signInActivityFragment : SignInActivityFragment = SignInActivityFragment()

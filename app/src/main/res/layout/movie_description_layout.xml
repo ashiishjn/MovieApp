@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/block1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
@@ -28,16 +29,21 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/block2"
+        android:layout_below="@id/block1"
+        android:layout_gravity="center_horizontal"
         android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
         android:adjustViewBounds="true"
         android:background="@drawable/imageview_roundedradius"
         android:clipToOutline="true"
         android:outlineProvider="background"
-        android:src="@drawable/pathaan_poster_landscape"/>
+        android:src="@drawable/pathaan_poster_portrait"/>
 
     <LinearLayout
+        android:id="@+id/block3"
+        android:layout_below="@id/block2"
         android:layout_marginHorizontal="15dp"
         android:layout_width="match_parent"
         android:layout_height="30dp"
@@ -60,6 +66,8 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/block4"
+        android:layout_below="@id/block3"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="15dp"
         android:layout_width="match_parent"
@@ -84,6 +92,8 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/block5"
+        android:layout_below="@id/block4"
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="15dp"
         android:layout_width="match_parent"
@@ -113,6 +123,8 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/block6"
+        android:layout_below="@id/block5"
         android:layout_marginVertical="10dp"
         android:layout_marginHorizontal="15dp"
         android:layout_width="match_parent"
@@ -121,28 +133,15 @@
         android:textColor="@color/dark_grey"
         android:text="An Indian spy takes on the leader of a group of mercenaries who have nefarious plans to target his homeland."/>
 
-    <ImageView
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_alignParentBottom="true"
+        android:id="@+id/book_tickets_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/horizontal_line"
-        />
+        android:layout_marginHorizontal="35dp"
+        android:layout_marginVertical="10dp"
+        android:background="@drawable/button_book_tickets"
+        android:textColor="@color/white"
+        android:text="Book Tickets"/>
 
-    <LinearLayout
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cast"
-            android:textSize="18sp"
-            android:textColor="@color/black"/>
-
-
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

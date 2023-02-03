@@ -11,7 +11,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.R
-import com.example.movieapp.model.HomeScreenPosterModel
 import com.example.movieapp.viewmodel.RecyclerViewAdapterHomeScreen
 
 
@@ -46,29 +45,29 @@ class HomeScreenActivityFragment : Fragment() {
             }
         }
 
-        val movie_poster_recycler_view : RecyclerView = view.findViewById(R.id.movie_poster_recycler_view)
+//        val movie_poster_recycler_view : RecyclerView = view.findViewById(R.id.movie_poster_recycler_view)
 
-        val posterArrayList : ArrayList<HomeScreenPosterModel> = ArrayList()
+//        val posterArrayList : ArrayList<HomeScreenPosterModel> = ArrayList()
+//
+//        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 8.5f))
+//        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 8.3f))
+//        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 7.5f))
+//        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 5.5f))
+//        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 6.5f))
+//        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 9.5f))
+//        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 8.5f))
+//        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 8.3f))
+//        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 7.5f))
+//        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 5.5f))
+//        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 6.5f))
+//        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 9.5f))
 
-        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 8.5f))
-        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 8.3f))
-        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 7.5f))
-        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 5.5f))
-        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 6.5f))
-        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 9.5f))
-        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 8.5f))
-        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 8.3f))
-        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 7.5f))
-        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 5.5f))
-        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 6.5f))
-        posterArrayList.add(HomeScreenPosterModel(R.drawable.pathaan_poster_portrait, 9.5f))
-
-        val recyclerViewAdapterHomeScreen : RecyclerViewAdapterHomeScreen =
-            RecyclerViewAdapterHomeScreen(posterArrayList, view.context)
-
-        val layoutManager = GridLayoutManager(view.context, 2)
-
-        movie_poster_recycler_view.setLayoutManager(layoutManager);
-        movie_poster_recycler_view.setAdapter(recyclerViewAdapterHomeScreen);
+//        val recyclerViewAdapterHomeScreen : RecyclerViewAdapterHomeScreen =
+//            RecyclerViewAdapterHomeScreen(posterArrayList, view.context)
+//
+//        val layoutManager = GridLayoutManager(view.context, 2)
+//
+//        movie_poster_recycler_view.setLayoutManager(layoutManager);
+//        movie_poster_recycler_view.setAdapter(recyclerViewAdapterHomeScreen);
     }
 }

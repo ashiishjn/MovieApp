@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.movieapp.fragment.SignInActivityFragment
 import com.example.movieapp.fragment.SignUpActivityFragment
-import com.example.movieapp.ui.UserLoginView
+import com.example.movieapp.ui.MainActivityView
 
 class MainActivity : AppCompatActivity(), SignUpActivityFragment.SignUpToSignIn, SignInActivityFragment.SignInToSignUp {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,30 +12,30 @@ class MainActivity : AppCompatActivity(), SignUpActivityFragment.SignUpToSignIn,
         setContentView(R.layout.activity_main)
     }
 
-    val userLoginView : UserLoginView = UserLoginView()
+    val mainActivityView : MainActivityView = MainActivityView()
 
     override fun onStart() {
         super.onStart()
-        userLoginView.ToSignIn(this)
+        mainActivityView.ToSignIn(this)
     }
 
     override fun onToSignInButtonSelected() {
-        userLoginView.ToSignIn(this)
+        mainActivityView.ToSignIn(this)
     }
 
     override fun onSignUpButtonSelected() {
-        userLoginView.UserSignUp(this)
+        mainActivityView.UserSignUp(this)
     }
 
     override fun onToSignUpButtonSelected() {
-        userLoginView.ToSignUp(this)
+        mainActivityView.ToSignUp(this)
     }
 
     override fun onToSignInAsAdminSelected() {
-        userLoginView.ToadminLogin(this)
+        mainActivityView.ToadminLogin(this)
     }
 
     override fun onSignInButtonSelected() {
-        userLoginView.UserSignIn(this)
+        mainActivityView.UserSignIn(this)
     }
 }
