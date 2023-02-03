@@ -11,4 +11,5 @@ import javax.inject.Singleton
 @InstallIn(ActivityComponent::class)
 object AppModule {
 
+
 }
