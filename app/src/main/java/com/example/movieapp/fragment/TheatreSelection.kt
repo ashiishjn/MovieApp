@@ -6,8 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.movieapp.R
 import com.example.movieapp.data.PushDataIntoCalendarModel
 import com.example.movieapp.data.PushDataIntoTheatreModel
 import com.example.movieapp.databinding.FragmentTheatreSelectionBinding
@@ -15,11 +17,6 @@ import com.example.movieapp.model.CalendarModel
 import com.example.movieapp.model.Theatre_P
 import com.example.movieapp.viewmodel.CalendarAdapter
 import com.example.movieapp.viewmodel.TheatreAdapter
-import com.rezwan.rcalenderlib.callbacks.YearRangeListener
-import com.rezwan.rcalenderlib.models.RCalendar
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.util.*
 import kotlin.collections.ArrayList
 
 class TheatreSelection : Fragment() {
@@ -61,6 +58,12 @@ class TheatreSelection : Fragment() {
 
         binding.theatreRecyclerView.layoutManager = theatreLayoutManager
         binding.theatreRecyclerView.adapter = theatreAdapter
+
+        // -------------------------------------------------------------------------------------------------------
+
+        binding.theatreSelectionBackArrow.setOnClickListener {
+            findNavController().navigate(R.id.action_theatreSelection_to_movieDescription)
+        }
 
     }
 

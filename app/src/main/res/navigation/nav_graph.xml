@@ -54,6 +54,11 @@
         <action
             android:id="@+id/action_homeScreen_to_movieDescription"
             app:destination="@id/movieDescription" />
+        <action
+            android:id="@+id/action_homeScreen_to_signIn"
+            app:destination="@id/signIn"
+            app:popUpTo="@id/homeScreen"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/movieDescription"
@@ -63,10 +68,21 @@
         <action
             android:id="@+id/action_movieDescription_to_theatreSelection"
             app:destination="@id/theatreSelection" />
+        <action
+            android:id="@+id/action_movieDescription_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/movieDescription"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/theatreSelection"
         android:name="com.example.movieapp.fragment.TheatreSelection"
         android:label="fragment_theatre_selection"
-        tools:layout="@layout/fragment_theatre_selection" />
+        tools:layout="@layout/fragment_theatre_selection" >
+        <action
+            android:id="@+id/action_theatreSelection_to_movieDescription"
+            app:destination="@id/movieDescription"
+            app:popUpTo="@id/theatreSelection"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
