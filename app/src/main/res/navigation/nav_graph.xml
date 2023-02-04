@@ -66,7 +66,7 @@
     </fragment>
     <fragment
         android:id="@+id/theatreSelection"
-        android:name="com.example.movieapp.TheatreSelection"
+        android:name="com.example.movieapp.fragment.TheatreSelection"
         android:label="fragment_theatre_selection"
         tools:layout="@layout/fragment_theatre_selection" />
 </navigation>

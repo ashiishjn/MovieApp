@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/calendar_linear_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingHorizontal="10dp">
+
+    <TextView
+        android:id="@+id/calendar_day"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAT"
+        android:textColor="@color/black"
+        android:textSize="12sp"/>
+
+    <TextView
+        android:id="@+id/calendar_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4"
+        android:textColor="@color/black"
+        android:textSize="27sp"/>
+
+    <TextView
+        android:id="@+id/calendar_month"
+        android:paddingHorizontal="5dp"
+        android:paddingVertical="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FEB"
+        android:textColor="@color/black"
+        android:textSize="12sp"/>
+
+</LinearLayout>

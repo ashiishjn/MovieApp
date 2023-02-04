@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MovieApp</string>
     <string name="log_in">LogIn</string>
+    <string name="day">Monday</string>
 
     <string-array name="city_names">
         <item>Pune</item>

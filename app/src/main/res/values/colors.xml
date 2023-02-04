@@ -6,6 +6,7 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="red">#FF0000</color>
+    <color name="green">#40a150</color>
     <color name="alternate_red">#c42418</color>
     <color name="alt_red">#d65e64</color>
     <color name="black">#FF000000</color>
@@ -16,4 +17,5 @@
     <color name="extra_light_grey">#DDDDDD</color>
     <color name="white">#FFFFFFFF</color>
     <color name="theme_background">#1a1a2c</color>
+    <color name="pink_theme_color">#f84464</color>
 </resources>
