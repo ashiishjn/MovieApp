@@ -8,10 +8,13 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentHomeScreenBinding
 import com.example.movieapp.databinding.FragmentSignInBinding
+import com.example.movieapp.model.Movie
 import com.example.movieapp.ui.HomeScreenView
+import com.example.movieapp.viewmodel.MovieListAdapter
 
 class HomeScreen : Fragment() {
 
@@ -51,6 +54,16 @@ class HomeScreen : Fragment() {
                 }
             }
         }
+
+        val movieList : ArrayList<Movie> = ArrayList()
+
+        val movieListAdapter : MovieListAdapter =
+            MovieListAdapter(movieList, view.context)
+
+        val layoutManager = GridLayoutManager(view.context, 2)
+
+        binding.moviePosterRecyclerView.setLayoutManager(layoutManager);
+        binding.moviePosterRecyclerView.setAdapter(movieListAdapter);
     }
 
     override fun onDestroyView() {
