@@ -8,32 +8,28 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.Toast
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.movieapp.R
+import com.example.movieapp.databinding.FragmentSignUpBinding
 
 class SignUpView {
-    fun workWithListener(view : View) {
-        val name : EditText = view.findViewById(R.id.signUp_name)
-        val email : EditText = view.findViewById(R.id.signUp_emailId)
-        val mobileNo : EditText = view.findViewById(R.id.signUp_mobileNo)
-        val password : EditText = view.findViewById(R.id.signUp_password1)
-        val confirmPassword : EditText = view.findViewById(R.id.signUp_password2)
+    fun workWithListener(view : View, binding : FragmentSignUpBinding) {
 
-        val showPassword: ImageButton = view.findViewById(R.id.signUp_showPassword1)
-        val confirmShowPassword: ImageButton = view.findViewById(R.id.signUp_showPassword2)
-
-        mobileNo.addTextChangedListener(object : TextWatcher {
+        binding.signUpMobileNo.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable) {}
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 if (s.length != 10) {
-                    mobileNo.setCompoundDrawablesWithIntrinsicBounds(
+                    binding.signUpMobileNo.setCompoundDrawablesWithIntrinsicBounds(
                         R.drawable.va_baseline_smartphone_24,
                         0,
                         R.drawable.va_baseline_error_outline_24,
                         0
                     )
                 } else {
-                    mobileNo.setCompoundDrawablesWithIntrinsicBounds(
+                    binding.signUpMobileNo.setCompoundDrawablesWithIntrinsicBounds(
                         R.drawable.va_baseline_smartphone_24,
                         0,
                         0,
@@ -46,30 +42,39 @@ class SignUpView {
         var flag = true
         var confirmFlag = true
 
-        showPassword.setBackgroundResource(R.drawable.va_baseline_visibility_off_24)
-        showPassword.setOnClickListener(View.OnClickListener {
+        binding.signUpShowPassword1.setImageResource(R.drawable.va_baseline_visibility_off_24)
+        binding.signUpShowPassword1.setOnClickListener(View.OnClickListener {
             if (flag) {
-                showPassword.setBackgroundResource(R.drawable.va_baseline_visibility_24)
-                password.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
+                binding.signUpShowPassword1.setImageResource(R.drawable.va_baseline_visibility_24)
+                binding.signUpPassword1.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
                 flag = false
             } else {
-                showPassword.setBackgroundResource(R.drawable.va_baseline_visibility_off_24)
-                password.setTransformationMethod(PasswordTransformationMethod.getInstance())
+                binding.signUpShowPassword1.setImageResource(R.drawable.va_baseline_visibility_off_24)
+                binding.signUpPassword1.setTransformationMethod(PasswordTransformationMethod.getInstance())
                 flag = true
             }
         })
 
-        confirmShowPassword.setBackgroundResource(R.drawable.va_baseline_visibility_off_24)
-        confirmShowPassword.setOnClickListener(View.OnClickListener {
+        binding.signUpShowPassword2.setImageResource(R.drawable.va_baseline_visibility_off_24)
+        binding.signUpShowPassword2.setOnClickListener(View.OnClickListener {
             if (confirmFlag) {
-                confirmShowPassword.setBackgroundResource(R.drawable.va_baseline_visibility_24)
-                confirmPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
+                binding.signUpShowPassword2.setImageResource(R.drawable.va_baseline_visibility_24)
+                binding.signUpPassword2.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
                 confirmFlag = false
             } else {
-                confirmShowPassword.setBackgroundResource(R.drawable.va_baseline_visibility_off_24)
-                confirmPassword.setTransformationMethod(PasswordTransformationMethod.getInstance())
+                binding.signUpShowPassword2.setImageResource(R.drawable.va_baseline_visibility_off_24)
+                binding.signUpPassword2.setTransformationMethod(PasswordTransformationMethod.getInstance())
                 confirmFlag = true
             }
         })
+
+        binding.signUpButton.setOnClickListener {
+            Toast.makeText(view.context, "SignUp Successful", Toast.LENGTH_SHORT).show()
+            view.findNavController().navigate(R.id.action_signUp_to_movieDescription)
+        }
+
+        binding.SignUpToSignIn.setOnClickListener {
+            view.findNavController().navigate(R.id.action_signUp_to_signIn)
+        }
     }
 }

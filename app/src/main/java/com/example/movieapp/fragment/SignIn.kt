@@ -26,24 +26,13 @@ class SignIn : Fragment() {
     ): View? {
         _binding= FragmentSignInBinding.inflate(inflater, container, false)
 
-        binding.loginButton.setOnClickListener {
-            Toast.makeText(context, "SignIn Successful", Toast.LENGTH_SHORT).show();
-            findNavController().navigate(R.id.action_signIn_to_homeScreen)
-        }
 
-        binding.signInasAdmin.setOnClickListener {
-            findNavController().navigate(R.id.action_signIn_to_adminSignIn)
-        }
-
-        binding.SignInToSignUp.setOnClickListener {
-            findNavController().navigate(R.id.action_signIn_to_signUp)
-        }
         // Inflate the layout for this fragment
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        signInView.workWithListener(view)
+        signInView.workWithListener(view, binding)
 
     }
 

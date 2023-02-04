@@ -33,7 +33,7 @@ class AdminSignIn : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        adminSignInView.workWithListener(view)
+        adminSignInView.workWithListener(view, binding)
 
     }
 

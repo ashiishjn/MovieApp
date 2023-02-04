@@ -47,7 +47,7 @@ class SignUp : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        signUpView.workWithListener(view)
+        signUpView.workWithListener(view, binding)
 
 
     }

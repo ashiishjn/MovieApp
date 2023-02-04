@@ -28,6 +28,10 @@ class MovieDescription : Fragment() {
         binding.bookTicketsButton.setOnClickListener {
             findNavController().navigate(R.id.action_movieDescription_to_theatreSelection)
         }
+
+        binding.movieDescriptionBackArrow.setOnClickListener {
+            findNavController().navigate(R.id.action_movieDescription_to_homeScreen)
+        }
     }
 
     override fun onDestroyView() {

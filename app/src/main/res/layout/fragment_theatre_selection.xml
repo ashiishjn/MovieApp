@@ -20,7 +20,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/movie_back_arrow"
+                    android:id="@+id/theatre_selection_back_arrow"
                     android:layout_marginStart="20dp"
                     android:layout_width="25dp"
                     android:layout_height="25dp"
