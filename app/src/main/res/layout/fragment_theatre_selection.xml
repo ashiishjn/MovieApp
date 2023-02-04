@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".TheatreSelection">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.view.calender.horizontal.umar.horizontalcalendarview.HorizontalCalendarView
+                android:id="@+id/horizontalcalendarview"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+            </com.view.calender.horizontal.umar.horizontalcalendarview.HorizontalCalendarView>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>
