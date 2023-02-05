@@ -15,7 +15,7 @@ class SeatLayoutAdapter(arrayList: ArrayList<String>, arrayListSeatSelected: Arr
 
     private val seatLayoutList: ArrayList<String>
     private val seatBookedList: ArrayList<Boolean>
-    public val seatSelectedList: ArrayList<String> = ArrayList()
+    val seatSelectedList: ArrayList<String> = ArrayList()
     private val mcontext: Context
     private val binding : FragmentSeatsSelectionBinding
 
@@ -45,7 +45,7 @@ class SeatLayoutAdapter(arrayList: ArrayList<String>, arrayListSeatSelected: Arr
             if(seatSelectedList.contains(holder.seat.text))
                 seatSelectedList.remove(holder.seat.text)
             else
-                seatSelectedList.add(holder.seat.text as String)
+                seatSelectedList.add(holder.seat.text.toString())
 
             notifyDataSetChanged()
             setButtonVisibility()

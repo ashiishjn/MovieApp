@@ -67,7 +67,6 @@ class CalendarAdapter (arrayList: ArrayList<CalendarModel>, mcontext: Context) :
         val date: TextView = itemView.findViewById(R.id.calendar_date)
         val month: TextView = itemView.findViewById(R.id.calendar_month)
         val calendarLinearLayout : LinearLayout = itemView.findViewById(R.id.calendar_linear_layout)
-
     }
 
 }

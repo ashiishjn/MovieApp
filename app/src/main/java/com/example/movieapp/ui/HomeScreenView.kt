@@ -26,6 +26,7 @@ class HomeScreenView {
                     parent: AdapterView<*>,
                     view: View, position: Int, id: Long
                 ) {
+                    // write code to perform some action
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
