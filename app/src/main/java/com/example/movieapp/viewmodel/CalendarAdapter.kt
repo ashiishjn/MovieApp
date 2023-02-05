@@ -8,6 +8,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.R
+import com.example.movieapp.data.Constants
 import com.example.movieapp.model.CalendarModel
 
 class CalendarAdapter (arrayList: ArrayList<CalendarModel>, mcontext: Context) :
@@ -19,6 +20,7 @@ class CalendarAdapter (arrayList: ArrayList<CalendarModel>, mcontext: Context) :
     init {
         calendarModelList = arrayList
         this.mcontext = mcontext
+        Constants.date = calendarModelList[0].date + " " + calendarModelList[0].month
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
@@ -26,6 +28,7 @@ class CalendarAdapter (arrayList: ArrayList<CalendarModel>, mcontext: Context) :
         val view: View =
             LayoutInflater.from(parent.context).inflate(
                 R.layout.custom_calendar_view, parent, false)
+
         return RecyclerViewHolder(view)
     }
 
@@ -42,6 +45,7 @@ class CalendarAdapter (arrayList: ArrayList<CalendarModel>, mcontext: Context) :
 
         holder.calendarLinearLayout.setOnClickListener{
             row_index = position
+            Constants.date = calendarModelList[position].date + " " + calendarModelList[position].month
             notifyDataSetChanged()
         }
         if(row_index == position) {
@@ -63,7 +67,6 @@ class CalendarAdapter (arrayList: ArrayList<CalendarModel>, mcontext: Context) :
         val date: TextView = itemView.findViewById(R.id.calendar_date)
         val month: TextView = itemView.findViewById(R.id.calendar_month)
         val calendarLinearLayout : LinearLayout = itemView.findViewById(R.id.calendar_linear_layout)
-
     }
 
 }

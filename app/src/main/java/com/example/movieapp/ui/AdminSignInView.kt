@@ -4,6 +4,7 @@ import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.widget.Toast
+import androidx.navigation.findNavController
 import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentAdminSignInBinding
 
@@ -24,7 +25,12 @@ class AdminSignInView {
             }
         })
 
-        binding.adminSignInButton.setOnClickListener { Toast.makeText(view.context,
-            "SignIn Successful", Toast.LENGTH_SHORT).show(); }
+        binding.adminSignInButton.setOnClickListener {
+            Toast.makeText(view.context,
+            "SignIn Successful", Toast.LENGTH_SHORT).show();
+
+            view.findNavController().navigate(R.id.action_adminSignIn_to_seatsSelection)
+        }
+
     }
 }

@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.TheatreSelection"
     android:background="@color/extra_light_grey">
 
@@ -45,16 +44,16 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="0.5dp"
                 android:src="@drawable/horizontal_line"/>
 
             <ScrollView
+                android:background="@drawable/theatre_recycler_view_background"
+                android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:layout_margin="10dp"
-                    android:background="@color/white"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/theatre_recycler_view"/>
