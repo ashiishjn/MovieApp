@@ -123,8 +123,8 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="20dp"
                     android:id="@+id/signUp_showPassword1"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="-60dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="-60dp"
                     android:padding="15dp"
                     style="?android:buttonBarButtonStyle" />
 
@@ -155,8 +155,8 @@
                     android:layout_height="30dp"
                     android:layout_marginTop="20dp"
                     android:id="@+id/signUp_showPassword2"
-                    android:layout_marginRight="5dp"
-                    android:layout_marginLeft="-60dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="-60dp"
                     android:padding="15dp"
                     style="?android:buttonBarButtonStyle" />
 

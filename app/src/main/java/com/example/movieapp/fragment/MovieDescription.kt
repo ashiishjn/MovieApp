@@ -5,12 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentMovieDescriptionBinding
 import com.example.movieapp.databinding.FragmentSignInBinding
 
 class MovieDescription : Fragment() {
-
 
     private  var _binding : FragmentMovieDescriptionBinding?=null
     private  val binding get() = _binding!!
@@ -22,6 +22,21 @@ class MovieDescription : Fragment() {
         // Inflate the layout for this fragment
         _binding= FragmentMovieDescriptionBinding.inflate(inflater,container,false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.bookTicketsButton.setOnClickListener {
+            findNavController().navigate(R.id.action_movieDescription_to_theatreSelection)
+        }
+
+        binding.movieDescriptionBackArrow.setOnClickListener {
+            findNavController().navigate(R.id.action_movieDescription_to_homeScreen)
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding=null
     }
 
 }

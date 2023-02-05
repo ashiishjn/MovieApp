@@ -3,37 +3,34 @@ package com.example.movieapp.ui
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.Toast
+import androidx.navigation.findNavController
 import com.example.movieapp.R
+import com.example.movieapp.databinding.FragmentAdminSignInBinding
 
 class AdminSignInView {
-    fun workWithListener(view : View) {
+    fun workWithListener(view : View, binding : FragmentAdminSignInBinding) {
         var flag : Boolean = true
 
-        val username : EditText = view.findViewById(R.id.admin_username)
-        val password : EditText = view.findViewById(R.id.admin_password)
-
-        val showPassword : ImageButton = view.findViewById(R.id.admin_showpassword)
-
-        val logIn : Button = view.findViewById(R.id.admin_signInButton)
-
-        showPassword.setImageResource(R.drawable.va_baseline_visibility_off_24)
-
-        showPassword.setOnClickListener(View.OnClickListener {
+        binding.adminShowpassword.setImageResource(R.drawable.va_baseline_visibility_off_24)
+        binding.adminShowpassword.setOnClickListener(View.OnClickListener {
             if (flag) {
-                showPassword.setImageResource(R.drawable.va_baseline_visibility_24)
-                password.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
+                binding.adminShowpassword.setImageResource(R.drawable.va_baseline_visibility_24)
+                binding.adminPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance())
                 flag = false
             } else {
-                showPassword.setImageResource(R.drawable.va_baseline_visibility_off_24)
-                password.setTransformationMethod(PasswordTransformationMethod.getInstance())
+                binding.adminShowpassword.setImageResource(R.drawable.va_baseline_visibility_off_24)
+                binding.adminPassword.setTransformationMethod(PasswordTransformationMethod.getInstance())
                 flag = true
             }
         })
 
-        logIn.setOnClickListener { Toast.makeText(view.context, "SignIn Successful", Toast.LENGTH_SHORT).show(); }
+        binding.adminSignInButton.setOnClickListener {
+            Toast.makeText(view.context,
+            "SignIn Successful", Toast.LENGTH_SHORT).show();
+
+            view.findNavController().navigate(R.id.action_adminSignIn_to_seatsSelection)
+        }
+
     }
 }
