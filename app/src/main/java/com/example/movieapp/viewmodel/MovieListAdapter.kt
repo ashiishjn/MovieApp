@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.R
 import com.example.movieapp.databinding.CustomHomeScreenRecyclerViewLayoutBinding
 import com.example.movieapp.model.Movie
-import com.example.movieapp.model.MovieResponse
 
 
 //class MovieListAdapter() :
@@ -78,6 +77,7 @@ class MovieListAdapter() :
 
         fun bind(movie: Movie) {
             binding.homeScreenMovieRating.text = movie.title
+
             //binding.homeScreenMoviePosterImage.setImageDrawable(R.drawable.pathaan_poster_portrait)
 //            binding.root.setOnClickListener {
 //                onNoteClicked(movie)
