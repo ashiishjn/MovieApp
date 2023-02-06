@@ -3,7 +3,6 @@ package com.example.movieapp.respository
 import androidx.lifecycle.MutableLiveData
 import com.example.movieapp.api.MovieAPI
 import com.example.movieapp.model.Movie
-import com.example.movieapp.model.MovieResponse
 import com.example.movieapp.utils.NetworkResult
 import org.json.JSONObject
 import javax.inject.Inject
