@@ -10,7 +10,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MovieViewModel @Inject constructor(private  val movieRepository:MovieRepository) :ViewModel(){
 
-    val moviesLiveData get()=movieRepository.moviesLiveData
+    val moviesLiveData get() = movieRepository.moviesLiveData
+
     fun getMovies()
     {
         viewModelScope.launch {
