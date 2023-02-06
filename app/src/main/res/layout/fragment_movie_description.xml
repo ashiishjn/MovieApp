@@ -30,10 +30,10 @@
                 android:src="@drawable/va_baseline_arrow_back_white_ios_24"/>
 
             <TextView
+                android:singleLine="true"
                 android:id="@+id/movie_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pathaan"
                 android:textSize="22sp"
                 android:textColor="@color/white"
                 android:layout_marginHorizontal="15dp"

@@ -11,6 +11,7 @@ import com.example.movieapp.model.CalendarModel
 import com.example.movieapp.model.Theatre_P
 import com.example.movieapp.adapter.CalendarAdapter
 import com.example.movieapp.adapter.TheatreAdapter
+import com.example.movieapp.data.Constants
 
 class TheatreSelectionView {
 
@@ -18,6 +19,8 @@ class TheatreSelectionView {
     val pushDataIntoTheatreModel : PushDataIntoTheatreModel = PushDataIntoTheatreModel()
 
     fun workWithListener(view : View, binding : FragmentTheatreSelectionBinding) {
+
+        binding.movieName.text = Constants.movie_name
 
         val calendarArrayList : ArrayList<CalendarModel> = pushDataIntoCalendarModel.pushData()
 

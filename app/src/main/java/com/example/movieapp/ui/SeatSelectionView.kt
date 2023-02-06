@@ -20,6 +20,8 @@ class SeatSelectionView {
 
     fun workWithListener(view : View, binding : FragmentSeatsSelectionBinding) {
 
+        binding.movieName.text = Constants.movie_name
+
         val bullet = "&#8226"
         binding.theatreDetails.text = Constants.date + " " + "${Html.fromHtml(bullet, 0)}" + " " +
         Constants.theatre_name + " " + "${Html.fromHtml(bullet, 0)}" + " " + Constants.timing

@@ -36,11 +36,11 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:singleLine="true"
                         android:id="@+id/movie_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Pathaan"
                         android:textSize="22sp"
                         android:textColor="@color/white"
                         android:layout_marginHorizontal="15dp"
@@ -51,7 +51,6 @@
                         android:id="@+id/theatre_details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pathaan"
                         android:textSize="15sp"
                         android:textColor="@color/white"
                         android:layout_marginHorizontal="15dp"

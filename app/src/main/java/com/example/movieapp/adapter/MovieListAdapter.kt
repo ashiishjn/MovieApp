@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.R
 import com.example.movieapp.data.Constants
-import com.example.movieapp.databinding.CustomHomeScreenRecyclerViewLayoutBinding
+import com.example.movieapp.databinding.MovieCardBinding
 import com.example.movieapp.model.Movie
 
 class MovieListAdapter() :
@@ -17,7 +17,7 @@ class MovieListAdapter() :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         Log.d("Application","Inside List Adapter")
-        val binding = CustomHomeScreenRecyclerViewLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = MovieCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MovieViewHolder(binding)
     }
 
@@ -28,11 +28,11 @@ class MovieListAdapter() :
         }
     }
 
-    inner class MovieViewHolder(private val binding: CustomHomeScreenRecyclerViewLayoutBinding) :
+    inner class MovieViewHolder(private val binding: MovieCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(movie: Movie) {
-            binding.homeScreenMovieRating.text = movie.title
+            binding.homeScreenMovieRating.text = movie.rating
             binding.homeScreenMoviePosterImage.setImageResource(R.drawable.pathaan)
 
             binding.root.setOnClickListener {

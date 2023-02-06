@@ -29,7 +29,7 @@
                     android:id="@+id/movie_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pathaan"
+                    android:singleLine="true"
                     android:textSize="22sp"
                     android:textColor="@color/white"
                     android:layout_marginHorizontal="15dp"

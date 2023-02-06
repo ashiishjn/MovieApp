@@ -15,7 +15,6 @@ class MovieRepository @Inject constructor(private val movieAPI: MovieAPI ) {
 //    private val _statusLiveData = MutableLiveData<NetworkResult<Pair<Boolean, String>>>()
 //    val statusLiveData get() = _statusLiveData
 
-
     suspend fun getMovies() {
         moviesLiveData.postValue(NetworkResult.Loading())
         val response = movieAPI.getMovies()

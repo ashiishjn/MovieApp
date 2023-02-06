@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.movieapp.R
+import com.example.movieapp.data.Constants
 import com.example.movieapp.databinding.FragmentMovieDescriptionBinding
 import com.example.movieapp.databinding.FragmentSignInBinding
 
@@ -25,6 +26,7 @@ class MovieDescription : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.movieName.text = Constants.movie_name
         binding.bookTicketsButton.setOnClickListener {
             findNavController().navigate(R.id.action_movieDescription_to_theatreSelection)
         }
