@@ -9,6 +9,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.ListAdapter
 import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.R
@@ -78,10 +79,11 @@ class MovieListAdapter() :
 
         fun bind(movie: Movie) {
             binding.homeScreenMovieRating.text = movie.title
-            //binding.homeScreenMoviePosterImage.setImageDrawable(R.drawable.pathaan_poster_portrait)
-//            binding.root.setOnClickListener {
-//                onNoteClicked(movie)
-//            }
+            binding.homeScreenMoviePosterImage.setImageResource(R.drawable.pathaan_poster_portrait)
+            binding.root.setOnClickListener {
+                val navController = Navigation.findNavController(binding.root)
+                navController.navigate(R.id.action_homeScreen_to_movieDescription)
+            }
         }
 
     }
