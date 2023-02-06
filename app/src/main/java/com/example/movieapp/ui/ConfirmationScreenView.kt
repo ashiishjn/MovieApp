@@ -21,6 +21,7 @@ class ConfirmationScreenView {
         binding.confirmationMovieDate.text = "Date : " + Constants.date
         binding.confirmationMovieTime.text = "Time : " + Constants.timing
         binding.confirmationMovieSeat.text = "Seat Selected : " + Constants.seat_selected
+        binding.confirmationId.text = "Transaction ID : " + java.util.UUID.randomUUID().toString().substring(0, 12)
 
         generateQR(binding)
 
@@ -32,7 +33,8 @@ class ConfirmationScreenView {
 
     fun generateQR(binding : FragmentConfirmationScreenBinding) {
 
-        val qr_text : String = "Movie Name : " + Constants.movie_name +
+        val qr_text : String = binding.confirmationId.text.toString() +
+                "\nMovie Name : " + Constants.movie_name +
                 "\nTheatre : " + Constants.theatre_name +
                 "\nDate : " + Constants.date +
                 "\nTime : " + Constants.timing +

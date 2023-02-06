@@ -35,6 +35,14 @@
             <TextView
                 android:textColor="@color/black"
                 android:padding="3dp"
+                android:id="@+id/confirmation_id"
+                android:textSize="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:textColor="@color/black"
+                android:padding="3dp"
                 android:id="@+id/confirmation_movie_name"
                 android:textSize="20sp"
                 android:layout_width="match_parent"
