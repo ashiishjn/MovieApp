@@ -28,8 +28,8 @@ class AdminSignInView {
         binding.adminSignInButton.setOnClickListener {
             Toast.makeText(view.context,
             "SignIn Successful", Toast.LENGTH_SHORT).show();
+            view.findNavController().navigate(R.id.action_adminSignIn_to_adminUpdateFragment)
 
-            view.findNavController().navigate(R.id.action_adminSignIn_to_seatsSelection)
         }
 
     }

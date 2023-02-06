@@ -6,6 +6,7 @@ class Constants {
         var theatre_name : String = ""
         var timing : String = ""
         var date : String = ""
+        var seat_selected : String = ""
         val CHANNEL_ID : String = "CHANNEL_ID_01"
         val NOTIFICATION_ID : Int = 1
     }

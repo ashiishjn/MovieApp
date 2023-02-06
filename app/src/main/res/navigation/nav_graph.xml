@@ -31,24 +31,24 @@
         tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/action_signUp_to_homeScreen"
-            app:destination="@id/homeScreen" />
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/signUp"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_signUp_to_signIn"
             app:destination="@id/signIn"
             app:popUpTo="@id/signUp"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_signUp_to_movieDescription"
-            app:destination="@id/movieDescription" />
     </fragment>
     <fragment
         android:id="@+id/adminSignIn"
         android:name="com.example.movieapp.fragment.AdminSignIn"
         android:label="fragment_admin_sign_in"
         tools:layout="@layout/fragment_admin_sign_in" >
+
         <action
-            android:id="@+id/action_adminSignIn_to_seatsSelection"
-            app:destination="@id/seatsSelection" />
+            android:id="@+id/action_adminSignIn_to_adminUpdateFragment"
+            app:destination="@id/adminUpdateFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeScreen"
@@ -98,12 +98,30 @@
         android:label="fragment_seats_selection"
         tools:layout="@layout/fragment_seats_selection" >
         <action
-            android:id="@+id/action_seatsSelection_to_homeScreen"
-            app:destination="@id/homeScreen"
-            app:popUpTo="@id/homeScreen"
+            android:id="@+id/action_seatsSelection_to_theatreSelection"
+            app:destination="@id/theatreSelection"
+            app:popUpTo="@id/seatsSelection"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_seatsSelection_to_theatreSelection"
-            app:destination="@id/theatreSelection" />
+            android:id="@+id/action_seatsSelection_to_confirmationScreenFragment"
+            app:destination="@id/confirmationScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/adminUpdateFragment"
+        android:name="com.example.movieapp.fragment.AdminUpdateFragment"
+        android:label="fragment_admin_update"
+        tools:layout="@layout/fragment_admin_update" >
+        <action
+            android:id="@+id/action_adminUpdateFragment_to_adminSignIn"
+            app:destination="@id/adminSignIn" />
+    </fragment>
+    <fragment
+        android:id="@+id/confirmationScreenFragment"
+        android:name="com.example.movieapp.ConfirmationScreenFragment"
+        android:label="fragment_confirmation_screen"
+        tools:layout="@layout/fragment_confirmation_screen" >
+        <action
+            android:id="@+id/action_confirmationScreenFragment_to_homeScreen"
+            app:destination="@id/homeScreen" />
     </fragment>
 </navigation>

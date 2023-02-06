@@ -1,4 +1,4 @@
-package com.example.movieapp.viewmodel
+package com.example.movieapp.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -48,8 +48,9 @@ class CalendarAdapter (arrayList: ArrayList<CalendarModel>, mcontext: Context) :
             Constants.date = calendarModelList[position].date + " " + calendarModelList[position].month
             notifyDataSetChanged()
         }
+
         if(row_index == position) {
-            holder.calendarLinearLayout.setBackgroundColor(mcontext.getColor(R.color.pink_theme_color))
+            holder.calendarLinearLayout.setBackgroundColor(mcontext.getColor(R.color.yellow))
             holder.day.setTextColor(mcontext.getColor(R.color.white))
             holder.date.setTextColor(mcontext.getColor(R.color.white))
             holder.month.setTextColor(mcontext.getColor(R.color.white))

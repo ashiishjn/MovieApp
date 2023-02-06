@@ -1,35 +1,36 @@
 package com.example.movieapp.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.movieapp.databinding.FragmentSignUpBinding
-import com.example.movieapp.ui.SignUpView
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import com.example.movieapp.R
+import com.example.movieapp.databinding.FragmentAdminUpdateBinding
 
-class SignUp : Fragment() {
+class AdminUpdateFragment : Fragment() {
 
-    private val signUpView : SignUpView = SignUpView()
-
-    private  var _binding :FragmentSignUpBinding?=null
+    private  var _binding : FragmentAdminUpdateBinding?=null
     private  val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding= FragmentSignUpBinding.inflate(inflater, container, false)
-
+        // Inflate the layout for this fragment
+        _binding= FragmentAdminUpdateBinding.inflate(inflater,container,false)
         // Inflate the layout for this fragment
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        signUpView.workWithListener(view, binding)
-
+        binding.adminScreenLogOut.setOnClickListener {
+            view.findNavController().navigate(R.id.action_adminUpdateFragment_to_adminSignIn)
+        }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding=null

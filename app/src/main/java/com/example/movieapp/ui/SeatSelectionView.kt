@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movieapp.R
 import com.example.movieapp.data.Constants
 import com.example.movieapp.databinding.FragmentSeatsSelectionBinding
-import com.example.movieapp.viewmodel.SeatLayoutAdapter
+import com.example.movieapp.adapter.SeatLayoutAdapter
 import kotlin.random.Random
 
 class SeatSelectionView {
@@ -38,8 +38,9 @@ class SeatSelectionView {
         binding.purchaseTicketsButton.setOnClickListener {
             Toast.makeText(view.context, "Congrats! Your booking is successful.",
                 Toast.LENGTH_SHORT).show()
-            notificationBuilder(view, seatLayoutAdapter.seatSelectedList.joinToString(", "))
-            view.findNavController().navigate(R.id.action_seatsSelection_to_homeScreen)
+            Constants.seat_selected = seatLayoutAdapter.seatSelectedList.joinToString(", ")
+            notificationBuilder(view)
+            view.findNavController().navigate(R.id.action_seatsSelection_to_confirmationScreenFragment)
         }
 
         binding.seatSelectionBackArrow.setOnClickListener {
@@ -66,7 +67,7 @@ class SeatSelectionView {
         return seatListSelected
     }
 
-    private fun notificationBuilder(view: View, seatDetails : String) {
+    private fun notificationBuilder(view: View) {
 
         val bullet = "&#8226"
 
@@ -80,7 +81,7 @@ class SeatSelectionView {
             .setContentTitle("Congrats! Your booking is successful.")
 //            .setContentText(notification_details + "\nSeats Selected : " + seatDetails)
             .setStyle(NotificationCompat.BigTextStyle()
-                .bigText("$notification_details\nSeats Selected : $seatDetails"))
+                .bigText("$notification_details\nSeats Selected : ${Constants.seat_selected}"))
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
         val notificationManagerCompat : NotificationManagerCompat = NotificationManagerCompat.from(view.context)

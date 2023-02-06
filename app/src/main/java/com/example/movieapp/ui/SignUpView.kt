@@ -5,12 +5,8 @@ import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentSignUpBinding
 
@@ -70,7 +66,7 @@ class SignUpView {
 
         binding.signUpButton.setOnClickListener {
             Toast.makeText(view.context, "SignUp Successful", Toast.LENGTH_SHORT).show()
-            view.findNavController().navigate(R.id.action_signUp_to_movieDescription)
+            view.findNavController().navigate(R.id.action_signUp_to_homeScreen)
         }
 
         binding.SignUpToSignIn.setOnClickListener {
