@@ -9,6 +9,10 @@ import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentAdminSignInBinding
 
 class AdminSignInView {
+
+    val email : String = "ashish@gmail.com"
+    val password : String = "12345678"
+
     fun workWithListener(view : View, binding : FragmentAdminSignInBinding) {
         var flag : Boolean = true
 
@@ -26,9 +30,17 @@ class AdminSignInView {
         })
 
         binding.adminSignInButton.setOnClickListener {
-            Toast.makeText(view.context,
-            "SignIn Successful", Toast.LENGTH_SHORT).show();
-            view.findNavController().navigate(R.id.action_adminSignIn_to_adminUpdateFragment)
+
+            if(binding.adminUsername.text.toString() == email
+                && binding.adminPassword.text.toString() == password
+            ) {
+                Toast.makeText(view.context,
+                    "SignIn Successful", Toast.LENGTH_SHORT).show();
+                view.findNavController().navigate(R.id.action_adminSignIn_to_adminUpdateFragment)
+            }
+            else {
+                Toast.makeText(view.context, "Enter correct email id and password", Toast.LENGTH_SHORT).show()
+            }
 
         }
 

@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ConfirmationScreenFragment">
+    android:background="@color/white"
+    tools:context=".fragment.ConfirmationScreenFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,6 +17,7 @@
             android:layout_margin="25dp">
 
             <TextView
+                android:textColor="@color/black"
                 android:gravity="center_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -31,51 +33,51 @@
                 android:layout_gravity="center_horizontal"/>
 
             <TextView
+                android:textColor="@color/black"
                 android:padding="3dp"
                 android:id="@+id/confirmation_movie_name"
                 android:textSize="20sp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Movie Name : Pathaan" />
+                android:layout_height="match_parent" />
 
             <TextView
+                android:textColor="@color/black"
                 android:padding="3dp"
                 android:id="@+id/confirmation_movie_date"
                 android:textSize="20sp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Date : Pathaan" />
+                android:layout_height="match_parent" />
 
             <TextView
+                android:textColor="@color/black"
                 android:padding="3dp"
                 android:id="@+id/confirmation_movie_theatre"
                 android:textSize="20sp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Theatre : Pathaan" />
+                android:layout_height="match_parent" />
 
             <TextView
+                android:textColor="@color/black"
                 android:padding="3dp"
                 android:id="@+id/confirmation_movie_time"
                 android:textSize="20sp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Time : Pathaan" />
+                android:layout_height="match_parent" />
 
             <TextView
-                android:layout_marginBottom="40dp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="20dp"
                 android:padding="3dp"
                 android:id="@+id/confirmation_movie_seat"
                 android:textSize="20sp"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Seat Selected : Pathaan" />
+                android:layout_height="match_parent" />
 
             <ImageView
                 android:id="@+id/confirmation_qr_code"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginBottom="40dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginBottom="20dp"
                 android:layout_gravity="center_horizontal"/>
 
             <androidx.appcompat.widget.AppCompatButton

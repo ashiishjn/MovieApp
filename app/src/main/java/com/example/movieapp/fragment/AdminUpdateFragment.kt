@@ -20,7 +20,6 @@ class AdminUpdateFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         _binding= FragmentAdminUpdateBinding.inflate(inflater,container,false)
-        // Inflate the layout for this fragment
         return binding.root
     }
 

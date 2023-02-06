@@ -14,6 +14,9 @@ import com.example.movieapp.databinding.FragmentSignInBinding
 
 class SignInView {
 
+    val email : String = "ashish@gmail.com"
+    val password : String = "12345678"
+
     fun workWithListener(view : View, binding: FragmentSignInBinding) {
         var flag : Boolean = true
 
@@ -32,8 +35,16 @@ class SignInView {
         })
 
         binding.loginButton.setOnClickListener {
-            Toast.makeText(view.context, "SignIn Successful", Toast.LENGTH_SHORT).show();
-            view.findNavController().navigate(R.id.action_signIn_to_homeScreen)
+
+            if(binding.loginUsername.text.toString() == email
+                && binding.loginPassword.text.toString() == password
+            ) {
+                Toast.makeText(view.context, "SignIn Successful", Toast.LENGTH_SHORT).show()
+                view.findNavController().navigate(R.id.action_signIn_to_homeScreen)
+            }
+            else {
+                Toast.makeText(view.context, "Enter correct email id and password", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.signInasAdmin.setOnClickListener {

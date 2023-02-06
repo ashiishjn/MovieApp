@@ -3,7 +3,6 @@ package com.example.movieapp.adapter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.DiffUtil
@@ -34,7 +33,7 @@ class MovieListAdapter() :
 
         fun bind(movie: Movie) {
             binding.homeScreenMovieRating.text = movie.title
-            binding.homeScreenMoviePosterImage.setImageResource(R.drawable.pathaan_poster_portrait)
+            binding.homeScreenMoviePosterImage.setImageResource(R.drawable.pathaan)
 
             binding.root.setOnClickListener {
                 Constants.movie_name = movie.title

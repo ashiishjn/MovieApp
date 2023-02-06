@@ -48,7 +48,9 @@
 
         <action
             android:id="@+id/action_adminSignIn_to_adminUpdateFragment"
-            app:destination="@id/adminUpdateFragment" />
+            app:destination="@id/adminUpdateFragment"
+            app:popUpTo="@id/signIn"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/homeScreen"
@@ -113,15 +115,19 @@
         tools:layout="@layout/fragment_admin_update" >
         <action
             android:id="@+id/action_adminUpdateFragment_to_adminSignIn"
-            app:destination="@id/adminSignIn" />
+            app:destination="@id/adminSignIn"
+            app:popUpTo="@id/adminUpdateFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/confirmationScreenFragment"
-        android:name="com.example.movieapp.ConfirmationScreenFragment"
+        android:name="com.example.movieapp.fragment.ConfirmationScreenFragment"
         android:label="fragment_confirmation_screen"
         tools:layout="@layout/fragment_confirmation_screen" >
         <action
             android:id="@+id/action_confirmationScreenFragment_to_homeScreen"
-            app:destination="@id/homeScreen" />
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/homeScreen"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
