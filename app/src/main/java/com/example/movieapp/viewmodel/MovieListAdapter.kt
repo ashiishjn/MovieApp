@@ -9,10 +9,11 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.ListAdapter
 import android.widget.TextView
 import androidx.lifecycle.MutableLiveData
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.R
-import com.example.movieapp.databinding.CustomHomeScreenRecyclerViewLayoutBinding
+import com.example.movieapp.databinding.MovieCardBinding
 import com.example.movieapp.model.Movie
 import com.example.movieapp.model.MovieResponse
 
@@ -62,7 +63,7 @@ class MovieListAdapter() :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         Log.d("Application","Inside List Adapter")
-        val binding = CustomHomeScreenRecyclerViewLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = MovieCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MovieViewHolder(binding)
     }
 
@@ -73,15 +74,16 @@ class MovieListAdapter() :
         }
     }
 
-    inner class MovieViewHolder(private val binding: CustomHomeScreenRecyclerViewLayoutBinding) :
+    inner class MovieViewHolder(private val binding: MovieCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(movie: Movie) {
             binding.homeScreenMovieRating.text = movie.title
-            //binding.homeScreenMoviePosterImage.setImageDrawable(R.drawable.pathaan_poster_portrait)
-//            binding.root.setOnClickListener {
-//                onNoteClicked(movie)
-//            }
+            binding.homeScreenMoviePosterImage.setImageResource(R.drawable.pathaan_poster_portrait)
+            binding.root.setOnClickListener {
+                val navController = Navigation.findNavController(binding.root)
+                navController.navigate(R.id.action_homeScreen_to_movieDescription)
+            }
         }
 
     }

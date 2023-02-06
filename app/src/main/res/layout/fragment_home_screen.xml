@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:id="@+id/movie_poster_recycler_view"
-            tools:listitem="@layout/custom_home_screen_recycler_view_layout"/>
+            tools:listitem="@layout/movie_card"/>
 
 
 
