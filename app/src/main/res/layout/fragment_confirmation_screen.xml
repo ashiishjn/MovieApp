@@ -16,34 +16,82 @@
             android:layout_margin="25dp">
 
             <TextView
+                android:gravity="center_horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Booking Confirmed!" />
+                android:layout_marginBottom="40dp"
+                android:text="Booking Confirmed!"
+                android:textSize="28sp"/>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/checked"
+                android:layout_marginBottom="40dp"
+                android:layout_gravity="center_horizontal"/>
 
             <TextView
+                android:padding="3dp"
+                android:id="@+id/confirmation_movie_name"
+                android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Movie Name : Pathaan" />
 
             <TextView
+                android:padding="3dp"
+                android:id="@+id/confirmation_movie_date"
+                android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Date : Pathaan" />
 
             <TextView
+                android:padding="3dp"
+                android:id="@+id/confirmation_movie_theatre"
+                android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Theatre : Pathaan" />
 
             <TextView
+                android:padding="3dp"
+                android:id="@+id/confirmation_movie_time"
+                android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Time : Pathaan" />
 
             <TextView
+                android:layout_marginBottom="40dp"
+                android:padding="3dp"
+                android:id="@+id/confirmation_movie_seat"
+                android:textSize="20sp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Seat Selected : Pathaan" />
+
+            <ImageView
+                android:id="@+id/confirmation_qr_code"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="40dp"
+                android:layout_gravity="center_horizontal"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/confirmation_home_screen_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/button_book_tickets"
+                android:padding="15dp"
+                android:shadowColor="@android:color/transparent"
+                android:text="Go Home"
+                android:textSize="20sp"/>
         </LinearLayout>
 
     </ScrollView>
