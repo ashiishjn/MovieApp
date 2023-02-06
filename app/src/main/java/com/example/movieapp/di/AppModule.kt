@@ -1,5 +1,7 @@
 package com.example.movieapp.di
 
+import com.example.movieapp.api.MovieAPI
+import com.example.movieapp.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,12 +13,15 @@ import kotlin.text.Typography.dagger
 
 @Module
 @InstallIn(ActivityComponent::class)
-object AppModule {
-    @Provides
-    @Singleton
-    fun provideRetrofit(): Retrofit =
-        Retrofit.Builder()
-            .baseUrl("Yet to Implement")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+class AppModule {
+//    @Provides
+//    @Singleton
+//    fun provideRetrofit(): Retrofit =
+//        Retrofit.Builder()
+//            .baseUrl("Yet to Implement")
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .build()
+
+
+
 }
