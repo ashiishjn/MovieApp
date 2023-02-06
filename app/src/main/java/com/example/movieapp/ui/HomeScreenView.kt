@@ -37,13 +37,13 @@ class HomeScreenView {
 
         val movieList : ArrayList<Movie> = ArrayList()
 
-        val movieListAdapter : MovieListAdapter =
-            MovieListAdapter(movieList, view.context)
+       // val movieListAdapter : MovieListAdapter =
+          //  MovieListAdapter(movieList, view.context)
 
         val layoutManager = GridLayoutManager(view.context, 2)
 
-        binding.moviePosterRecyclerView.setLayoutManager(layoutManager);
-        binding.moviePosterRecyclerView.setAdapter(movieListAdapter);
+//        binding.moviePosterRecyclerView.setLayoutManager(layoutManager);
+//        binding.moviePosterRecyclerView.setAdapter(movieListAdapter);
 
         binding.homeScreenLogOut.setOnClickListener {
             view.findNavController().navigate(R.id.action_homeScreen_to_signIn)

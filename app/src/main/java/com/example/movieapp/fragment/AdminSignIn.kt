@@ -27,6 +27,7 @@ class AdminSignIn : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         _binding= FragmentAdminSignInBinding.inflate(inflater,container,false)
         // Inflate the layout for this fragment
         return binding.root

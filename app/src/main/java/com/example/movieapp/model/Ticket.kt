@@ -5,6 +5,6 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Ticket(
-    val movie: Movie,
+    val movie: String,
     val theatre: Theatre,
 ) : Parcelable
