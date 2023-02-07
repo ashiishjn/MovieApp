@@ -39,11 +39,10 @@ class MovieListAdapter(private val onNoteClicked: (Movie) -> Unit) :
 
             binding.homeScreenMoviePosterImage.setImageResource(moviePoster.getPosterId(movie.title))
             binding.root.setOnClickListener {
+                Constants.movie_name = movie.title
                 onNoteClicked(movie)
                  }
-
         }
-
     }
 
     class ComparatorDiffUtil : DiffUtil.ItemCallback<Movie>() {
