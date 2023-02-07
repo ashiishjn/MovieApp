@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.movieapp.R
 import com.example.movieapp.data.Constants
+import com.example.movieapp.data.MoviePoster
 import com.example.movieapp.databinding.FragmentMovieDescriptionBinding
 import com.example.movieapp.databinding.FragmentSignInBinding
 import com.example.movieapp.model.Movie
@@ -22,7 +23,7 @@ class MovieDescription : Fragment() {
     private  val binding get() = _binding!!
 
     private  var movie:Movie?= null
-
+    val moviePoster : MoviePoster = MoviePoster()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,19 +46,6 @@ class MovieDescription : Fragment() {
             findNavController().navigate(R.id.action_movieDescription_to_homeScreen)
         }
     }
-//    private fun setInitialData() {
-//        val jsonNote = arguments?.getString("note")
-//        if (jsonNote != null) {
-//            note = Gson().fromJson<NoteResponse>(jsonNote, NoteResponse::class.java)
-//            note?.let {
-//                binding.txtTitle.setText(it.title)
-//                binding.txtDescription.setText(it.description)
-//            }
-//        }
-//        else{
-//            binding.addEditText.text = resources.getString(R.string.add_note)
-//        }
-//    }
 
     private fun setInitialData() {
         val jsonNote = arguments?.getString("movie")
@@ -66,6 +54,9 @@ class MovieDescription : Fragment() {
             movie?.let {
                 binding.movieName.text = it.title
                 binding.movieDescription.text = it.plot
+                binding.moviePoster.setImageResource(moviePoster.getPosterId(it.title))
+                binding.movieRating.text = it.rating
+                binding.movieLength.text = it.runtime
             }
         }
         else{
