@@ -34,6 +34,8 @@ class TheatreSelection : Fragment() {
 
     private lateinit var adapter:TheatreAdapter
 
+    val theatreSelectionView : TheatreSelectionView = TheatreSelectionView()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,7 +48,7 @@ class TheatreSelection : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
 
-       // theatreSelectionView.workWithListener(view, binding)
+        theatreSelectionView.workWithListener(view, binding)
         theatreSelectionViewModel.getMovieListings()
         adapter= TheatreAdapter()
 

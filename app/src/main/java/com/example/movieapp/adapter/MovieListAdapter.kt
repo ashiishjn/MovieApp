@@ -9,11 +9,14 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.R
 import com.example.movieapp.data.Constants
+import com.example.movieapp.data.MoviePoster
 import com.example.movieapp.databinding.MovieCardBinding
 import com.example.movieapp.model.Movie
 
 class MovieListAdapter(private val onNoteClicked: (Movie) -> Unit) :
     ListAdapter<Movie, MovieListAdapter.MovieViewHolder>(ComparatorDiffUtil()) {
+
+    val moviePoster : MoviePoster = MoviePoster()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         Log.d("Application","Inside List Adapter")
@@ -32,15 +35,14 @@ class MovieListAdapter(private val onNoteClicked: (Movie) -> Unit) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(movie: Movie) {
-            binding.homeScreenMovieRating.text = movie.title
+            binding.homeScreenMovieRating.text = movie.rating
 
-            binding.homeScreenMoviePosterImage.setImageResource(R.drawable.pathaan)
+            binding.homeScreenMoviePosterImage.setImageResource(moviePoster.getPosterId(movie.title))
             binding.root.setOnClickListener {
+                Constants.movie_name = movie.title
                 onNoteClicked(movie)
                  }
-
         }
-
     }
 
     class ComparatorDiffUtil : DiffUtil.ItemCallback<Movie>() {
