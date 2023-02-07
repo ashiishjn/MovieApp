@@ -65,6 +65,9 @@
             app:destination="@id/signIn"
             app:popUpTo="@id/homeScreen"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_homeScreen_to_purchaseHistoryFragment"
+            app:destination="@id/purchaseHistoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/movieDescription"
@@ -126,6 +129,17 @@
         tools:layout="@layout/fragment_confirmation_screen" >
         <action
             android:id="@+id/action_confirmationScreenFragment_to_homeScreen"
+            app:destination="@id/homeScreen"
+            app:popUpTo="@id/homeScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/purchaseHistoryFragment"
+        android:name="com.example.movieapp.fragment.PurchaseHistoryFragment"
+        android:label="fragment_purchase_history"
+        tools:layout="@layout/fragment_purchase_history" >
+        <action
+            android:id="@+id/action_purchaseHistoryFragment_to_homeScreen"
             app:destination="@id/homeScreen"
             app:popUpTo="@id/homeScreen"
             app:popUpToInclusive="true" />
