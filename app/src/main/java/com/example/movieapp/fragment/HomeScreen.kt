@@ -47,7 +47,7 @@ class HomeScreen : Fragment() {
 
       //  Log.d("Application","sucess()")
 
-       // binding.moviePosterRecyclerView.layoutManager=GridLayoutManager()
+        binding.moviePosterRecyclerView.layoutManager=GridLayoutManager(view.context, 2)
         binding.moviePosterRecyclerView.adapter=adapter
         bindObservers()
     }

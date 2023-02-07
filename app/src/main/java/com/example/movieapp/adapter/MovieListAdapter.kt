@@ -3,8 +3,8 @@ package com.example.movieapp.adapter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.ListAdapter
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.R
@@ -32,14 +32,16 @@ class MovieListAdapter() :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(movie: Movie) {
-            binding.homeScreenMovieRating.text = movie.rating
-            binding.homeScreenMoviePosterImage.setImageResource(R.drawable.pathaan)
+            binding.homeScreenMovieRating.text = movie.title
 
+            binding.homeScreenMoviePosterImage.setImageResource(R.drawable.pathaan)
             binding.root.setOnClickListener {
                 Constants.movie_name = movie.title
                 binding.root.findNavController().navigate(R.id.action_homeScreen_to_movieDescription)
             }
+
         }
+
     }
 
     class ComparatorDiffUtil : DiffUtil.ItemCallback<Movie>() {

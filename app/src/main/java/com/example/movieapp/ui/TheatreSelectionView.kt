@@ -10,7 +10,6 @@ import com.example.movieapp.databinding.FragmentTheatreSelectionBinding
 import com.example.movieapp.model.CalendarModel
 import com.example.movieapp.model.Theatre_P
 import com.example.movieapp.adapter.CalendarAdapter
-import com.example.movieapp.adapter.TheatreAdapter
 import com.example.movieapp.data.Constants
 
 class TheatreSelectionView {
