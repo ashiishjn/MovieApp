@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".fragment.AdminUpdateFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal" >
+
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/theme_background">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <ImageView
+                    android:id="@+id/admin_screen_log_out"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/va_baseline_logout_24"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/extra_light_grey"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.03"
+                android:gravity="center_horizontal"/>
+
+            <EditText
+                android:id="@+id/admin_update_movie_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
+                android:background="@drawable/edittext_transparent_background_theme_stroke"
+                android:drawablePadding="10dp"
+                android:hint="Enter Movie Name"
+                android:padding="15dp"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/medium_grey" />
+
+            <EditText
+                android:id="@+id/admin_update_theatre_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
+                android:padding="15dp"
+                android:background="@drawable/edittext_transparent_background_theme_stroke"
+                android:drawablePadding="10dp"
+                android:hint="Enter Theatre Name"
+                android:paddingEnd="60dp"
+                android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/medium_grey"/>
+
+            <EditText
+                android:id="@+id/admin_update_timing"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
+                android:padding="15dp"
+                android:background="@drawable/edittext_transparent_background_theme_stroke"
+                android:drawablePadding="10dp"
+                android:hint="Enter Time"
+                android:paddingEnd="60dp"
+                android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:textColorHighlight="@color/black"
+                android:textColorHint="@color/medium_grey"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/admin_update_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="50dp"
+                android:background="@drawable/button_book_tickets"
+                android:padding="15dp"
+                android:shadowColor="@android:color/transparent"
+                android:text="Update"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

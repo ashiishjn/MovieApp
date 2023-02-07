@@ -9,5 +9,6 @@ data class Movie(
     val posterUrl: String,
     val runtime: String,
     val title: String,
-    val year: String
+    val year: String,
+    val rating : String
 )

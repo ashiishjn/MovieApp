@@ -4,13 +4,10 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Patterns
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentSignUpBinding
 
@@ -69,8 +66,30 @@ class SignUpView {
         })
 
         binding.signUpButton.setOnClickListener {
-            Toast.makeText(view.context, "SignUp Successful", Toast.LENGTH_SHORT).show()
-            view.findNavController().navigate(R.id.action_signUp_to_movieDescription)
+//            if(binding.signUpName.text.toString().isEmpty())
+//                binding.signUpName.error = "This Field cannot be empty"
+//
+//            else if(!Patterns.EMAIL_ADDRESS.matcher(binding.signUpEmailId.text.toString()).matches())
+//                binding.signUpEmailId.error = "Invalid Email"
+//
+//            else if(binding.signUpMobileNo.text.toString().length != 10)
+//                binding.signUpMobileNo.error = "Phone Number Should be of 10 digits"
+//
+//            else if(binding.signUpPassword1.text.toString().length < 8)
+//                binding.signUpPassword1.error = "Password should be minimum of 8 characters"
+//
+//            else if(binding.signUpPassword2.text.toString().length < 8)
+//                binding.signUpPassword2.error = "Password should be minimum of 8 characters"
+//
+//            else if(binding.signUpPassword1.text.toString() != binding.signUpPassword2.text.toString()){
+//                binding.signUpPassword1.error = "Passwords does not match"
+//                binding.signUpPassword2.error = "Passwords does not match"
+//            }
+//            else {
+                Toast.makeText(view.context, "SignUp Successful", Toast.LENGTH_SHORT).show()
+                view.findNavController().navigate(R.id.action_signUp_to_homeScreen)
+//            }
+
         }
 
         binding.SignUpToSignIn.setOnClickListener {

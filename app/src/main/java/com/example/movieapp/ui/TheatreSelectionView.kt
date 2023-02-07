@@ -2,17 +2,15 @@ package com.example.movieapp.ui
 
 import android.view.View
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.movieapp.R
 import com.example.movieapp.data.PushDataIntoCalendarModel
 import com.example.movieapp.data.PushDataIntoTheatreModel
-import com.example.movieapp.databinding.FragmentSignUpBinding
 import com.example.movieapp.databinding.FragmentTheatreSelectionBinding
 import com.example.movieapp.model.CalendarModel
 import com.example.movieapp.model.Theatre_P
-import com.example.movieapp.viewmodel.CalendarAdapter
-import com.example.movieapp.viewmodel.TheatreAdapter
+import com.example.movieapp.adapter.CalendarAdapter
+import com.example.movieapp.data.Constants
 
 class TheatreSelectionView {
 
@@ -20,6 +18,8 @@ class TheatreSelectionView {
     val pushDataIntoTheatreModel : PushDataIntoTheatreModel = PushDataIntoTheatreModel()
 
     fun workWithListener(view : View, binding : FragmentTheatreSelectionBinding) {
+
+        binding.movieName.text = Constants.movie_name
 
         val calendarArrayList : ArrayList<CalendarModel> = pushDataIntoCalendarModel.pushData()
 

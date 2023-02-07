@@ -6,22 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentHomeScreenBinding
-import com.example.movieapp.databinding.FragmentSignInBinding
-import com.example.movieapp.model.Movie
 import com.example.movieapp.ui.HomeScreenView
 import com.example.movieapp.utils.NetworkResult
-import com.example.movieapp.viewmodel.MovieListAdapter
+import com.example.movieapp.adapter.MovieListAdapter
 import com.example.movieapp.viewmodel.MovieViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -35,7 +27,7 @@ class HomeScreen : Fragment() {
 
     private val movieViewModel by viewModels<MovieViewModel>()
 
-    private lateinit var adapter:MovieListAdapter
+    private lateinit var adapter: MovieListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,15 +40,14 @@ class HomeScreen : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        //homeScreenView.workWithListener(view, binding)
-       // super.onViewCreated(view, savedInstanceState)
+        homeScreenView.workWithListener(view, binding)
 
         movieViewModel.getMovies()
-        adapter=MovieListAdapter()
+        adapter= MovieListAdapter()
 
       //  Log.d("Application","sucess()")
 
-       // binding.moviePosterRecyclerView.layoutManager=GridLayoutManager()
+        binding.moviePosterRecyclerView.layoutManager=GridLayoutManager(view.context, 2)
         binding.moviePosterRecyclerView.adapter=adapter
         bindObservers()
     }
@@ -81,7 +72,6 @@ class HomeScreen : Fragment() {
             }
         })
     }
-
 
     override fun onDestroyView() {
         super.onDestroyView()
