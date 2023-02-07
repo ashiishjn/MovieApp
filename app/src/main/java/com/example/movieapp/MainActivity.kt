@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.movieapp.api.MovieAPI
+import com.example.movieapp.api.MovieListingAPI
 import com.example.movieapp.utils.Constants.TAG
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -15,18 +16,23 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import com.example.movieapp.data.Constants
+import com.example.movieapp.respository.MovieListingRepository
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var  movieAPI: MovieAPI
+    lateinit var  movieListingAPI: MovieListingAPI
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         CoroutineScope(Dispatchers.IO).launch {
-            val response=movieAPI.getMovies()
 
-            Log.d(TAG,response.body().toString())
+            val response= MovieListingRepository(movieListingAPI)
+            response.getMovieListings()
+            val a=response.moviesListingLiveData.value?.data.toString();
+
+            Log.d(TAG,a)
         }
 
         setContentView(R.layout.activity_main)

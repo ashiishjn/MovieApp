@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.movieapp.R
 import com.example.movieapp.databinding.MovieCardBinding
 import com.example.movieapp.model.Movie
-import com.example.movieapp.model.MovieResponse
 
 
 //class MovieListAdapter() :
@@ -79,11 +78,19 @@ class MovieListAdapter() :
 
         fun bind(movie: Movie) {
             binding.homeScreenMovieRating.text = movie.title
+<<<<<<< HEAD
             binding.homeScreenMoviePosterImage.setImageResource(R.drawable.pathaan_poster_portrait)
             binding.root.setOnClickListener {
                 val navController = Navigation.findNavController(binding.root)
                 navController.navigate(R.id.action_homeScreen_to_movieDescription)
             }
+=======
+
+            //binding.homeScreenMoviePosterImage.setImageDrawable(R.drawable.pathaan_poster_portrait)
+//            binding.root.setOnClickListener {
+//                onNoteClicked(movie)
+//            }
+>>>>>>> fe8bf7e5b7671620338f254bb25cbe06f87ad941
         }
 
     }

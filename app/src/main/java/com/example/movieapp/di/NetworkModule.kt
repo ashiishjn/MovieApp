@@ -1,12 +1,15 @@
 package com.example.movieapp.di
 
 import com.example.movieapp.api.MovieAPI
+import com.example.movieapp.api.MovieListingAPI
+import com.example.movieapp.model.MovieListingResponse
 import com.example.movieapp.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
+import retrofit2.Retrofit.Builder
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
@@ -24,6 +27,13 @@ class NetworkModule {
     @Provides
     fun provideMovieAPI(retrofitBuilder: Retrofit.Builder): MovieAPI {
         return retrofitBuilder.build().create(MovieAPI::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideMovieListingAPI(retrofitBuilder: Retrofit.Builder):MovieListingAPI{
+        return retrofitBuilder.build().create(MovieListingAPI::class.java)
+
     }
 
 }

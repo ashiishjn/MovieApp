@@ -33,14 +33,14 @@ class TheatreSelectionView {
 
         // -------------------------------------------------------------------------------------------------------
 
-        val theatreArrayList : ArrayList<Theatre_P> = pushDataIntoTheatreModel.pushData()
-
-        val theatreAdapter : TheatreAdapter = TheatreAdapter(theatreArrayList, view.context)
-
-        val theatreLayoutManager = LinearLayoutManager(view.context)
-
-        binding.theatreRecyclerView.layoutManager = theatreLayoutManager
-        binding.theatreRecyclerView.adapter = theatreAdapter
+//        val theatreArrayList : ArrayList<Theatre_P> = pushDataIntoTheatreModel.pushData()
+//
+//        //val theatreAdapter : TheatreAdapter = TheatreAdapter(theatreArrayList, view.context)
+//
+//        val theatreLayoutManager = LinearLayoutManager(view.context)
+//
+//        binding.theatreRecyclerView.layoutManager = theatreLayoutManager
+//        binding.theatreRecyclerView.adapter = theatreAdapter
 
         // -------------------------------------------------------------------------------------------------------
 
