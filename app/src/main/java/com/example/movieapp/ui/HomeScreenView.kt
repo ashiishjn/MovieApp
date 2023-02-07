@@ -31,5 +31,9 @@ class HomeScreenView {
         binding.homeScreenLogOut.setOnClickListener {
             view.findNavController().navigate(R.id.action_homeScreen_to_signIn)
         }
+
+        binding.homeScreenHistory.setOnClickListener {
+            view.findNavController().navigate(R.id.action_homeScreen_to_purchaseHistoryFragment)
+        }
     }
 }
