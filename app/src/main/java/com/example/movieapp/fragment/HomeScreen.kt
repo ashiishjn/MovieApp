@@ -9,12 +9,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.movieapp.R
 import com.example.movieapp.databinding.FragmentHomeScreenBinding
 import com.example.movieapp.ui.HomeScreenView
 import com.example.movieapp.utils.NetworkResult
 import com.example.movieapp.adapter.MovieListAdapter
+import com.example.movieapp.model.Movie
 import com.example.movieapp.viewmodel.MovieViewModel
+import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -43,7 +47,7 @@ class HomeScreen : Fragment() {
         homeScreenView.workWithListener(view, binding)
 
         movieViewModel.getMovies()
-        adapter= MovieListAdapter()
+        adapter= MovieListAdapter(::onNoteClicked)
 
       //  Log.d("Application","sucess()")
 
@@ -71,6 +75,12 @@ class HomeScreen : Fragment() {
                 }
             }
         })
+    }
+
+    private fun onNoteClicked(movie: Movie){
+        val bundle = Bundle()
+        bundle.putString("movie", Gson().toJson(movie))
+        findNavController().navigate(R.id.action_homeScreen_to_movieDescription, bundle)
     }
 
     override fun onDestroyView() {

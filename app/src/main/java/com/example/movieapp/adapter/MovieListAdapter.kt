@@ -12,7 +12,7 @@ import com.example.movieapp.data.Constants
 import com.example.movieapp.databinding.MovieCardBinding
 import com.example.movieapp.model.Movie
 
-class MovieListAdapter() :
+class MovieListAdapter(private val onNoteClicked: (Movie) -> Unit) :
     ListAdapter<Movie, MovieListAdapter.MovieViewHolder>(ComparatorDiffUtil()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
@@ -36,9 +36,8 @@ class MovieListAdapter() :
 
             binding.homeScreenMoviePosterImage.setImageResource(R.drawable.pathaan)
             binding.root.setOnClickListener {
-                Constants.movie_name = movie.title
-                binding.root.findNavController().navigate(R.id.action_homeScreen_to_movieDescription)
-            }
+                onNoteClicked(movie)
+                 }
 
         }
 
