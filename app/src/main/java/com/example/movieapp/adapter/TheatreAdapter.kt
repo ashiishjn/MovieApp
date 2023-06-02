@@ -1,5 +1,6 @@
 package com.example.movieapp.viewmodel
 
+import android.annotation.SuppressLint
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -71,6 +72,7 @@ class TheatreAdapter():
             return oldItem.name == newItem.name
         }
 
+        @SuppressLint("DiffUtilEquals")
         override fun areContentsTheSame(oldItem: Theatre_P, newItem: Theatre_P): Boolean {
             return oldItem == newItem
         }
