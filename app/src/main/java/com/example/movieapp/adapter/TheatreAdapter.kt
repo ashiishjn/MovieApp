@@ -71,7 +71,7 @@ class TheatreAdapter():
         override fun areItemsTheSame(oldItem: Theatre_P, newItem: Theatre_P): Boolean {
             return oldItem.name == newItem.name
         }
-
+        //comment
         @SuppressLint("DiffUtilEquals")
         override fun areContentsTheSame(oldItem: Theatre_P, newItem: Theatre_P): Boolean {
             return oldItem == newItem
